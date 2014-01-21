@@ -7,9 +7,8 @@ $("#btnCars").bind('touchstart mousedown', function(){
 		type:'POST',
 		data:term,
 		dataType:'json',
-		error:function(jqXHR,text_status,strError){
-			var err = eval("(" + jqXHR.responseText + ")");
-			alert(err.Message);
+		error:function(xhr,text_status,strError){
+			alert(xhr.responseText);
 		},
 		timeout:60000,
 		success:function(data){
@@ -28,8 +27,9 @@ $("#btnBikes").bind('touchstart mousedown', function(){
 		type:'POST',
 		data:term,
 		dataType:'json',
-		error:function(jqXHR,text_status,strError){
+		error:function(xhr,text_status,strError){
 			alert("no connection");
+			alert(xhr.responseText);
 		},
 		timeout:60000,
 		success:function(data){
