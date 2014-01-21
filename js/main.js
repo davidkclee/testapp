@@ -5,11 +5,9 @@ $("#btnCars").bind('touchstart mousedown', function(){
 	$.ajax({
 		url:'reply.php',
 		type:'POST',
+		cache: false,
 		data:term,
-		dataType:'jsonp',
-		error:function(xhr,text_status,strError){
-			alert(xhr.responseText);
-		},
+		dataType:'jsonp',		
 		timeout:60000,
 		success:function(data){
 			$("#result").html("");
@@ -25,12 +23,9 @@ $("#btnBikes").bind('touchstart mousedown', function(){
 	$.ajax({
 		url:'reply.php',
 		type:'POST',
+		cache: false,
 		data:term,
-		dataType: 'jsonp',
-		error:function(xhr,text_status,strError){
-			alert("no connection");
-			alert(xhr.responseText);
-		},
+		dataType: 'jsonp',		
 		timeout:60000,
 		success:function(data){
 			$("#result").html("");
@@ -39,6 +34,10 @@ $("#btnBikes").bind('touchstart mousedown', function(){
 			}
 		}
 	});
+});
+
+$("#result").ajaxError(function(event, request, settings, exception) {
+  $("#result").html("Error Calling: " + settings.url + "<br />HTTP Code: " + request.status);
 });
 
 });
