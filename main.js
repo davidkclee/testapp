@@ -6,11 +6,9 @@ $("#btnCars").bind('touchstart mousedown', function(){
 		url:'reply.php',
 		type:'POST',
 		data:term,
-		cache: false,
 		dataType:'jsonp',
 		error:function(xhr,text_status,strError){
-			alert('Error Message: '+text_status);
-			alert('HTTP Error: '+strError);
+			alert(xhr.responseText);
 		},
 		timeout:60000,
 		success:function(data){
@@ -28,7 +26,6 @@ $("#btnBikes").bind('touchstart mousedown', function(){
 		url:'reply.php',
 		type:'POST',
 		data:term,
-		cache: false,
 		dataType: 'jsonp',
 		error:function(xhr,text_status,strError){
 			alert("no connection");
