@@ -22,8 +22,10 @@
                       url: "http://icemas.org/apptest/reply.php",
                       data: "name=" + theName,
                       cache: false,
-                      dataType: "text",
-                      success: onSuccess
+                      dataType: "JSON",
+                      success: function (jsonStr) {
+							$("#resultLog").html(JSON.stringify(jsonStr));
+						}
                     });
                 }
             });
@@ -31,12 +33,6 @@
             $("#resultLog").ajaxError(function(event, request, settings, exception) {
               $("#resultLog").html("Error Calling: " + settings.url + "<br />HTTP Code: " + request.status);
             });
- 
-            function onSuccess(data)
-            {
-                $("#resultLog").html("Result: " + data);
-            }
- 
         });
     </script>
  
