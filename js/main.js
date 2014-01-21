@@ -3,7 +3,7 @@ $( document ).ready(function() {
 $("#btnCars").bind('touchstart mousedown', function(){
 	var term= "button=" + $(this).val();
 	$.ajax({
-		url:'reply.php',
+		url:'http://icemas.org/apptest/reply.php',
 		type:'POST',
 		data:term,
 		cache: false,
@@ -25,7 +25,7 @@ $("#btnCars").bind('touchstart mousedown', function(){
 $("#btnBikes").bind('touchstart mousedown', function(){
 	var term= "button=" + $(this).val();
 	$.ajax({
-		url:'reply.php',
+		url:'http://icemas.org/apptest/reply.php',
 		type:'POST',
 		data:term,
 		cache: false,
