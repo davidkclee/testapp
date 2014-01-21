@@ -8,7 +8,8 @@ $("#btnCars").bind('touchstart mousedown', function(){
 		data:term,
 		dataType:'json',
 		error:function(jqXHR,text_status,strError){
-			alert("no connection");
+			var err = eval("(" + jqXHR.responseText + ")");
+			alert(err.Message);
 		},
 		timeout:60000,
 		success:function(data){
