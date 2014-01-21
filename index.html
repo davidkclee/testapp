@@ -19,7 +19,7 @@
                 {
                     $.ajax({
                       type: "POST",
-                      url: "reply.php",
+                      url: "http://icemas.org/apptest/reply.php",
                       data: ({name: theName}),
                       cache: false,
                       dataType: "text",
@@ -33,7 +33,7 @@
             });
  
             function onSuccess(data)
-            {
+            {	alert(data);
                 $("#resultLog").html("Result: " + data);
             }
  
